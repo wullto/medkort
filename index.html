@@ -378,6 +378,14 @@
   .source a:hover { text-decoration: underline; }
 
   .divider { height: 1px; background: var(--border); margin: 22px 0; }
+  .pdf-frame {
+    width: 100%;
+    height: min(78vh, 980px);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: var(--shadow);
+  }
 
 </style>
 </head>
@@ -401,6 +409,10 @@
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v14M6 7l4-4 4 4" stroke-linecap="round" stroke-linejoin="round"/><rect x="7" y="10" width="6" height="7" rx="1"/></svg>
       <span>Innohep</span>
     </div>
+    <div class="nav-item" onclick="showPage('bakteriekort')">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 7h6M7 10h6M7 13h4"/></svg>
+      <span>Bakteriekort</span>
+    </div>
     <div class="sidebar-footer">
       <strong>MedRef 1.1</strong>
       Exakt innehåll klistras in manuellt. Kontrollera alltid mot originalkälla och lokala PM.
@@ -423,6 +435,11 @@
               <div class="home-card-icon">💉</div>
               <div class="home-card-title">Innohep</div>
               <div class="home-card-desc">Viktsbaserad översikt med tydliga doskort, tabeller och fast källrad.</div>
+            </div>
+            <div class="home-card" onclick="showPage('bakteriekort')">
+              <div class="home-card-icon">🧫</div>
+              <div class="home-card-title">Bakteriekort</div>
+              <div class="home-card-desc">Original-PDF inbäddad utan omformatering.</div>
             </div>
           </div>
         </div>
@@ -699,6 +716,30 @@
         </div>
       </div>
 
+      <div class="page" id="page-bakteriekort">
+        <div class="page-header">
+          <div class="page-icon red">🧫</div>
+          <div>
+            <div class="page-title">Antibiotika och bakteriekort</div>
+            <div class="page-desc">Original-PDF inbäddad.</div>
+          </div>
+          <div class="page-badge">2 sidor</div>
+        </div>
+
+        <div class="section">
+          <iframe
+            class="pdf-frame"
+            src="https://strama.se/wp-content/uploads/2025/04/antibiotika-och-bakteriekort.pdf"
+            title="Antibiotika och bakteriekort PDF">
+          </iframe>
+        </div>
+
+        <div class="source">
+          <span class="source-icon">📎</span>
+          <div>Källa: <a href="https://strama.se/wp-content/uploads/2025/04/antibiotika-och-bakteriekort.pdf" target="_blank" rel="noreferrer">Strama, Antibiotika och bakteriekort (PDF)</a>.</div>
+        </div>
+      </div>
+
     </div>
   </main>
 
@@ -714,6 +755,10 @@
     <button class="bn-item" onclick="showPage('innohep')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M8 8l4-4 4 4" stroke-linecap="round"/><rect x="9" y="12" width="6" height="8" rx="1"/></svg>
       <span class="bn-label">Innohep</span>
+    </button>
+    <button class="bn-item" onclick="showPage('bakteriekort')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+      <span class="bn-label">Kort</span>
     </button>
   </nav>
 </div>
