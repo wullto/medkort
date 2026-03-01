@@ -9,65 +9,122 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F5F2ED;
-    --surface: #FDFAF6;
-    --surface-2: #EDE9E2;
-    --border: #DDD8CF;
-    --text: #1C1917;
-    --text-muted: #78716C;
-    --text-light: #A8A29E;
-    --accent-red: #C0392B;
-    --accent-red-light: #FDF0EE;
-    --accent-red-mid: #F5C6C1;
-    --accent-blue: #1D4E89;
-    --accent-blue-light: #EEF3FA;
-    --accent-blue-mid: #BDD0EC;
-    --accent-green: #1A6B3C;
-    --accent-green-light: #EEF7F2;
-    --accent-green-mid: #A7D4B8;
-    --accent-amber: #92400E;
-    --accent-amber-light: #FEF3E2;
-    --pill-bg: #E8E3DC;
-    --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04);
-    --shadow-lg: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05);
+    --bg: #f5f2ed;
+    --bg-strong: linear-gradient(180deg, #f1ece3 0%, #f8f5ef 42%, #f5f2ed 100%);
+    --surface: #fdfaf6;
+    --surface-2: #ede9e2;
+    --surface-3: #f7f3ee;
+    --border: #ddd8cf;
+    --text: #1c1917;
+    --text-muted: #78716c;
+    --text-light: #a8a29e;
+    --accent-red: #c0392b;
+    --accent-red-light: #fdf0ee;
+    --accent-red-mid: #f5c6c1;
+    --accent-blue: #1d4e89;
+    --accent-blue-light: #eef3fa;
+    --accent-blue-mid: #bdd0ec;
+    --accent-green: #1a6b3c;
+    --accent-green-light: #eef7f2;
+    --accent-green-mid: #a7d4b8;
+    --accent-amber: #92400e;
+    --accent-amber-light: #fef3e2;
+    --pill-bg: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.07), 0 4px 16px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05);
     --bottom-nav-h: 64px;
     --safe-bottom: env(safe-area-inset-bottom, 0px);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { height: 100%; overflow: hidden; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.5; }
+  body { font-family: "DM Sans", sans-serif; background: var(--bg-strong); color: var(--text); font-size: 15px; line-height: 1.5; }
+  a { color: inherit; }
 
-  /* ── DESKTOP ── */
   @media (min-width: 720px) {
     .app { display: flex; height: 100vh; }
     .bottom-nav { display: none; }
-    .sidebar { display: flex !important; width: 220px; min-width: 220px; background: var(--surface); border-right: 1px solid var(--border); flex-direction: column; padding: 28px 0 24px; height: 100vh; overflow-y: auto; flex-shrink: 0; }
+    .sidebar {
+      display: flex !important;
+      width: 240px;
+      min-width: 240px;
+      background: rgba(253, 250, 246, 0.92);
+      backdrop-filter: blur(12px);
+      border-right: 1px solid var(--border);
+      flex-direction: column;
+      padding: 28px 0 24px;
+      height: 100vh;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
     .main { padding-bottom: 0 !important; height: 100vh; overflow-y: auto; }
-    .page-scroll { padding: 36px 40px; max-width: 860px; }
+    .page-scroll { padding: 36px 40px; max-width: 980px; }
   }
 
-  /* ── MOBILE ── */
   @media (max-width: 719px) {
     .app { display: flex; flex-direction: column; height: 100dvh; }
     .sidebar { display: none; }
-    .main { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: calc(var(--bottom-nav-h) + var(--safe-bottom) + 16px); }
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: calc(var(--bottom-nav-h) + var(--safe-bottom) + 16px);
+    }
     .page-scroll { padding: 20px 16px 8px; }
-    .bottom-nav { display: flex; position: fixed; bottom: 0; left: 0; right: 0; height: calc(var(--bottom-nav-h) + var(--safe-bottom)); padding-bottom: var(--safe-bottom); background: var(--surface); border-top: 1px solid var(--border); box-shadow: 0 -4px 20px rgba(0,0,0,0.07); z-index: 100; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
+    .bottom-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: calc(var(--bottom-nav-h) + var(--safe-bottom));
+      padding-bottom: var(--safe-bottom);
+      background: rgba(253, 250, 246, 0.96);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.07);
+      z-index: 100;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+    }
     .bottom-nav::-webkit-scrollbar { display: none; }
-    .bn-item { flex: 1; min-width: 64px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 8px 4px 4px; cursor: pointer; color: var(--text-light); transition: color 0.15s; border: none; background: none; }
+    .bn-item {
+      flex: 1;
+      min-width: 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      padding: 8px 4px 4px;
+      cursor: pointer;
+      color: var(--text-light);
+      transition: color 0.15s;
+      border: none;
+      background: none;
+    }
     .bn-item.active { color: var(--accent-red); }
     .bn-item svg { width: 22px; height: 22px; }
     .bn-label { font-size: 10px; font-weight: 500; white-space: nowrap; }
   }
 
-  /* ── SIDEBAR ── */
   .logo { padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
-  .logo-mark { font-family: 'DM Serif Display', serif; font-size: 22px; letter-spacing: -0.5px; }
+  .logo-mark { font-family: "DM Serif Display", serif; font-size: 22px; letter-spacing: -0.5px; }
   .logo-mark span { color: var(--accent-red); }
   .logo-sub { font-size: 10px; color: var(--text-light); letter-spacing: 0.6px; text-transform: uppercase; margin-top: 2px; }
   .nav-label { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); padding: 0 20px; margin: 12px 0 4px; }
-  .nav-item { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: var(--text-muted); font-size: 13.5px; transition: all 0.15s; border-left: 2px solid transparent; }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 13.5px;
+    transition: all 0.15s;
+    border-left: 2px solid transparent;
+  }
   .nav-item:hover { background: var(--surface-2); color: var(--text); }
   .nav-item.active { color: var(--accent-red); background: var(--accent-red-light); border-left-color: var(--accent-red); font-weight: 500; }
   .nav-item svg { width: 18px; height: 18px; opacity: 0.6; flex-shrink: 0; }
@@ -75,110 +132,261 @@
   .sidebar-footer { margin-top: auto; padding: 14px 20px 0; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-light); }
   .sidebar-footer strong { display: block; color: var(--text-muted); font-size: 12px; margin-bottom: 2px; }
 
-  /* ── PAGES ── */
   .page { display: none; }
   .page.active { display: block; animation: fadeIn 0.18s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-  /* ── PAGE HEADER ── */
-  .page-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
-  .page-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
   .page-icon.red { background: var(--accent-red-light); }
   .page-icon.blue { background: var(--accent-blue-light); }
   .page-icon.green { background: var(--accent-green-light); }
   .page-icon.amber { background: var(--accent-amber-light); }
-  .page-title { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1.2; letter-spacing: -0.3px; }
-  .page-desc { color: var(--text-muted); font-size: 12.5px; margin-top: 3px; line-height: 1.4; }
-  .page-badge { margin-left: auto; font-size: 10.5px; font-weight: 500; padding: 3px 9px; border-radius: 20px; background: var(--pill-bg); color: var(--text-muted); white-space: nowrap; align-self: flex-start; flex-shrink: 0; }
+  .page-title { font-family: "DM Serif Display", serif; font-size: 24px; line-height: 1.15; letter-spacing: -0.4px; }
+  .page-desc { color: var(--text-muted); font-size: 12.5px; margin-top: 4px; line-height: 1.5; max-width: 62ch; }
+  .page-badge {
+    margin-left: auto;
+    font-size: 10.5px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: var(--pill-bg);
+    color: var(--text-muted);
+    white-space: nowrap;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
 
-  /* ── ALERT ── */
+  .welcome { font-family: "DM Serif Display", serif; font-size: 26px; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 6px; }
+  .welcome span { color: var(--accent-red); font-style: italic; }
+  .welcome-sub { color: var(--text-muted); font-size: 13.5px; margin-bottom: 28px; max-width: 60ch; }
+  .home-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .home-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 16px;
+    cursor: pointer;
+    transition: all 0.18s;
+    box-shadow: var(--shadow);
+  }
+  .home-card:active { transform: scale(0.97); }
+  @media (hover: hover) {
+    .home-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  }
+  .home-card-icon { font-size: 26px; margin-bottom: 10px; }
+  .home-card-title { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+  .home-card-desc { font-size: 11.5px; color: var(--text-muted); line-height: 1.5; }
+
+  .section { margin-bottom: 28px; }
+  .section-title { font-size: 10.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
+
   .alert { display: flex; gap: 11px; padding: 12px 14px; border-radius: 10px; margin-bottom: 22px; font-size: 13px; line-height: 1.5; }
   .alert.red { background: var(--accent-red-light); border: 1px solid var(--accent-red-mid); }
-  .alert.amber { background: var(--accent-amber-light); border: 1px solid #F4C56A; }
+  .alert.amber { background: var(--accent-amber-light); border: 1px solid #f4c56a; }
   .alert.blue { background: var(--accent-blue-light); border: 1px solid var(--accent-blue-mid); }
   .alert.green { background: var(--accent-green-light); border: 1px solid var(--accent-green-mid); }
   .alert-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
   .alert-text strong { display: block; font-weight: 600; margin-bottom: 1px; font-size: 13px; }
 
-  /* ── SECTION ── */
-  .section { margin-bottom: 28px; }
-  .section-title { font-size: 10.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
-
-  /* ── CARD ── */
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
   .card + .card { margin-top: 10px; }
-  .card-header { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 9px; background: var(--surface-2); }
+  .card-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--surface-2);
+  }
   .card-header-title { font-size: 13px; font-weight: 600; }
+  .card-body { padding: 16px; }
+  .card-body > * + * { margin-top: 14px; }
   .tag { font-size: 10.5px; font-weight: 500; padding: 2px 7px; border-radius: 4px; }
   .tag-red { background: var(--accent-red-light); color: var(--accent-red); }
   .tag-blue { background: var(--accent-blue-light); color: var(--accent-blue); }
   .tag-green { background: var(--accent-green-light); color: var(--accent-green); }
   .tag-amber { background: var(--accent-amber-light); color: var(--accent-amber); }
 
-  /* ── TABLE ── */
+  .reference-intro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .reference-chip {
+    background: rgba(253, 250, 246, 0.88);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    box-shadow: var(--shadow);
+  }
+  .reference-chip-label {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-light);
+    margin-bottom: 4px;
+  }
+  .reference-chip-value { font-size: 13px; color: var(--text); }
+
+  .reference-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 9px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--surface-3);
+  }
+
+  .paste-guide {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 719px) {
+    .paste-guide { grid-template-columns: 1fr; }
+  }
+  .checklist { list-style: none; }
+  .checklist li { position: relative; padding-left: 18px; font-size: 13px; color: var(--text-muted); }
+  .checklist li + li { margin-top: 8px; }
+  .checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-red);
+  }
+
+  .snippet {
+    background: #201c1a;
+    color: #f7efe5;
+    border-radius: 12px;
+    padding: 14px;
+    overflow-x: auto;
+    font-family: "DM Mono", monospace;
+    font-size: 11.5px;
+    line-height: 1.7;
+    white-space: pre;
+  }
+
   .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 340px; }
-  thead th { padding: 8px 14px; text-align: left; font-size: 10.5px; font-weight: 600; letter-spacing: 0.4px; color: var(--text-muted); background: var(--surface-2); border-bottom: 1px solid var(--border); white-space: nowrap; }
+  thead th {
+    padding: 8px 14px;
+    text-align: left;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
   tbody tr { border-bottom: 1px solid var(--border); }
   tbody tr:last-child { border-bottom: none; }
-  tbody tr:hover { background: #FAFAF8; }
+  tbody tr:hover { background: #fafaf8; }
   tbody td { padding: 9px 14px; vertical-align: middle; line-height: 1.4; }
   tbody td:first-child { font-weight: 500; white-space: nowrap; }
-  .dose { font-family: 'DM Mono', monospace; font-size: 12px; }
+  .dose { font-family: "DM Mono", monospace; font-size: 12px; }
   .sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
   .warn { color: var(--accent-red); }
   .saknas { color: var(--text-light); font-style: italic; font-size: 12px; }
   .special { font-size: 11.5px; color: var(--text-muted); line-height: 1.4; }
 
-  /* ── INNOHEP SPECIFIKT ── */
+  .content-block {
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(247, 243, 238, 0.7));
+  }
+  .content-block-title {
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+  .prose { font-size: 14px; }
+  .prose > * + * { margin-top: 10px; }
+  .prose p { line-height: 1.7; }
+  .prose ul, .prose ol { padding-left: 18px; color: var(--text); }
+  .prose li + li { margin-top: 6px; }
+  .prose strong { font-weight: 600; }
+  .prose em { color: var(--text-muted); }
+
   .syringe-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .syringe-badge {
-    display: inline-flex; align-items: center;
-    font-size: 11.5px; font-weight: 600;
-    padding: 2px 10px; border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 4px;
     border: 1.5px solid currentColor;
     white-space: nowrap;
   }
-  .s-orange { color: #C05C00; background: #FFF3E8; border-color: #E8894A; }
-  .s-red    { color: #B91C1C; background: #FEF2F2; border-color: #F87171; }
-  .s-brown  { color: #6B3A2A; background: #F7EDE8; border-color: #A8624A; }
-  .s-yellow { color: #856800; background: #FEFCE8; border-color: #D4B800; }
-  .s-dkgreen { color: #14532D; background: #F0FDF4; border-color: #16A34A; }
-  .s-dkblue { color: #1E3A8A; background: #EFF6FF; border-color: #3B82F6; }
+  .s-orange { color: #c05c00; background: #fff3e8; border-color: #e8894a; }
+  .s-red { color: #b91c1c; background: #fef2f2; border-color: #f87171; }
+  .s-brown { color: #6b3a2a; background: #f7ede8; border-color: #a8624a; }
+  .s-yellow { color: #856800; background: #fefce8; border-color: #d4b800; }
+  .s-dkgreen { color: #14532d; background: #f0fdf4; border-color: #16a34a; }
+  .s-dkblue { color: #1e3a8a; background: #eff6ff; border-color: #3b82f6; }
 
-  .two-dose-row { background: #FAFAF6; }
-  .two-dose-header td { background: #F0EDE6; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; padding: 6px 14px; }
-
-  /* ── SOURCE ── */
-  .source { display: flex; align-items: flex-start; gap: 8px; margin-top: 28px; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; font-size: 11.5px; color: var(--text-muted); }
+  .source {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 22px;
+    padding: 12px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 11.5px;
+    color: var(--text-muted);
+  }
   .source-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; }
   .source a { color: var(--accent-blue); text-decoration: none; }
   .source a:hover { text-decoration: underline; }
 
-  /* ── DIVIDER ── */
   .divider { height: 1px; background: var(--border); margin: 22px 0; }
 
-  /* ── HOME ── */
-  .welcome { font-family: 'DM Serif Display', serif; font-size: 26px; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 6px; }
-  .welcome span { color: var(--accent-red); font-style: italic; }
-  .welcome-sub { color: var(--text-muted); font-size: 13.5px; margin-bottom: 28px; }
-  .home-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
-  .home-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 16px; cursor: pointer; transition: all 0.18s; box-shadow: var(--shadow); }
-  .home-card:active { transform: scale(0.97); }
-  @media (hover: hover) { .home-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); } }
-  .home-card-icon { font-size: 26px; margin-bottom: 10px; }
-  .home-card-title { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
-  .home-card-desc { font-size: 11.5px; color: var(--text-muted); line-height: 1.4; }
 </style>
 </head>
 <body>
 <div class="app">
-
-  <!-- SIDEBAR (desktop) -->
   <nav class="sidebar">
     <div class="logo">
       <div class="logo-mark">Med<span>Ref</span></div>
-      <div class="logo-sub">Klinisk referens</div>
+      <div class="logo-sub">Manuellt kuraterad klinisk referens</div>
     </div>
     <div class="nav-label">Sidor</div>
     <div class="nav-item active" onclick="showPage('home')">
@@ -193,52 +401,49 @@
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v14M6 7l4-4 4 4" stroke-linecap="round" stroke-linejoin="round"/><rect x="7" y="10" width="6" height="7" rx="1"/></svg>
       <span>Innohep</span>
     </div>
-    <!-- LÄGG TILL FLER NAV-ITEMS HÄR -->
     <div class="sidebar-footer">
-      <strong>MedRef 1.0</strong>
-      Kontrollera alltid mot FASS & lokala PM
+      <strong>MedRef 1.1</strong>
+      Exakt innehåll klistras in manuellt. Kontrollera alltid mot originalkälla och lokala PM.
     </div>
   </nav>
 
-  <!-- MAIN -->
   <main class="main">
     <div class="page-scroll">
-
-      <!-- STARTSIDA -->
       <div class="page active" id="page-home">
-        <p class="welcome">God morgon,<br><span>Doktor.</span></p>
-        <p class="welcome-sub">Välj en sida nedan.</p>
-        <div class="home-grid">
-          <div class="home-card" onclick="showPage('raf-dosering')">
-            <div class="home-card-icon">🦠</div>
-            <div class="home-card-title">RAF-dosering</div>
-            <div class="home-card-desc">Normaldos och högdos för S och I, plus UVI-doser.</div>
+        <p class="welcome">Din egen<br><span>kliniska referens.</span></p>
+        <div class="section">
+          <div class="section-title">Befintliga referenser</div>
+          <div class="home-grid">
+            <div class="home-card" onclick="showPage('raf-dosering')">
+              <div class="home-card-icon">🦠</div>
+              <div class="home-card-title">RAF-dosering</div>
+              <div class="home-card-desc">Tabellformat för preparat, normaldos, högdos, UVI-dos och särskilda överväganden.</div>
+            </div>
+            <div class="home-card" onclick="showPage('innohep')">
+              <div class="home-card-icon">💉</div>
+              <div class="home-card-title">Innohep</div>
+              <div class="home-card-desc">Viktsbaserad översikt med tydliga doskort, tabeller och fast källrad.</div>
+            </div>
           </div>
-          <div class="home-card" onclick="showPage('innohep')">
-            <div class="home-card-icon">💉</div>
-            <div class="home-card-title">Innohep</div>
-            <div class="home-card-desc">Tinzaparin — doser för trombosprofylax och DVT/LE per viktkategori.</div>
-          </div>
-          <!-- LÄGG TILL FLER KORT HÄR -->
         </div>
       </div>
 
-
-      <!-- ═══════════════════════════
-           INNOHEP
-      ═══════════════════════════ -->
       <div class="page" id="page-innohep">
-
         <div class="page-header">
           <div class="page-icon blue">💉</div>
           <div>
             <div class="page-title">Innohep® (tinzaparin)</div>
-            <div class="page-desc">Dosrekommendationer — Lasarettet i Ystad, Region Skåne</div>
+            <div class="page-desc">Dosrekommendationer från originalkälla, presenterade i samma visuella struktur som övriga referenser.</div>
           </div>
           <div class="page-badge">Rev. 2020-04-01</div>
         </div>
 
-        <!-- TROMBOSPROFYLAX -->
+        <div class="reference-meta section">
+          <span class="meta-pill">Källa: Region Skåne</span>
+          <span class="meta-pill">Typ: lokal behandlingsrekommendation</span>
+          <span class="meta-pill">Format: tabell + korttext</span>
+        </div>
+
         <div class="section">
           <div class="section-title">Trombosprofylax</div>
           <div class="card">
@@ -247,13 +452,17 @@
               <div class="card-header-title">Trombosprofylax</div>
               <span class="tag tag-blue">s.c. × 1/dygn</span>
             </div>
-            <div style="padding: 16px 16px;">
-              <div style="font-size: 14px;">Inj Innohep® <strong>4 500 E</strong>, en gång dagligen, subkutant.</div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="content-block-title">Originaltext</div>
+                <div class="prose">
+                  <p>Inj Innohep® <strong>4 500 E</strong>, en gång dagligen, subkutant.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- BEHANDLING DVT / LE -->
         <div class="section">
           <div class="section-title">Behandling av DVT och lungemboli</div>
 
@@ -261,7 +470,7 @@
             <div class="alert-icon">⚠️</div>
             <div class="alert-text">
               <strong>Obs tvådosförfarande vid vikt &gt; 106 kg</strong>
-              Ges s.c. en gång dagligen (endossprotor 20 000 E/ml) — utom vid vikt &gt; 106 kg, då 2 injektioner/dygn ges enligt tabellen nedan.
+              Ges s.c. en gång dagligen (endossprotor 20 000 E/ml) utom vid vikt &gt; 106 kg, då 2 injektioner/dygn ges enligt tabellen nedan.
             </div>
           </div>
 
@@ -282,48 +491,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>38–48</td>
-                    <td><span class="dose">8 000 E</span></td>
-                    <td><span class="dose">0,4 ml</span></td>
-                    <td><span class="syringe-badge s-orange">orange</span></td>
-                  </tr>
-                  <tr>
-                    <td>49–59</td>
-                    <td><span class="dose">10 000 E</span></td>
-                    <td><span class="dose">0,5 ml</span></td>
-                    <td><span class="syringe-badge s-red">röd</span></td>
-                  </tr>
-                  <tr>
-                    <td>60–70</td>
-                    <td><span class="dose">12 000 E</span></td>
-                    <td><span class="dose">0,6 ml</span></td>
-                    <td><span class="syringe-badge s-brown">brun</span></td>
-                  </tr>
-                  <tr>
-                    <td>71–82</td>
-                    <td><span class="dose">14 000 E</span></td>
-                    <td><span class="dose">0,7 ml</span></td>
-                    <td><span class="syringe-badge s-yellow">gul</span></td>
-                  </tr>
-                  <tr>
-                    <td>83–93</td>
-                    <td><span class="dose">16 000 E</span></td>
-                    <td><span class="dose">0,8 ml</span></td>
-                    <td><span class="syringe-badge s-dkgreen">mörkgrön</span></td>
-                  </tr>
-                  <tr>
-                    <td>94–105</td>
-                    <td><span class="dose">18 000 E</span></td>
-                    <td><span class="dose">0,9 ml</span></td>
-                    <td><span class="syringe-badge s-dkblue">mörkblå</span></td>
-                  </tr>
+                  <tr><td>38–48</td><td><span class="dose">8 000 E</span></td><td><span class="dose">0,4 ml</span></td><td><span class="syringe-badge s-orange">orange</span></td></tr>
+                  <tr><td>49–59</td><td><span class="dose">10 000 E</span></td><td><span class="dose">0,5 ml</span></td><td><span class="syringe-badge s-red">röd</span></td></tr>
+                  <tr><td>60–70</td><td><span class="dose">12 000 E</span></td><td><span class="dose">0,6 ml</span></td><td><span class="syringe-badge s-brown">brun</span></td></tr>
+                  <tr><td>71–82</td><td><span class="dose">14 000 E</span></td><td><span class="dose">0,7 ml</span></td><td><span class="syringe-badge s-yellow">gul</span></td></tr>
+                  <tr><td>83–93</td><td><span class="dose">16 000 E</span></td><td><span class="dose">0,8 ml</span></td><td><span class="syringe-badge s-dkgreen">mörkgrön</span></td></tr>
+                  <tr><td>94–105</td><td><span class="dose">18 000 E</span></td><td><span class="dose">0,9 ml</span></td><td><span class="syringe-badge s-dkblue">mörkblå</span></td></tr>
                 </tbody>
               </table>
             </div>
 
-            <!-- Tvådos separator -->
-            <div style="padding: 8px 14px 4px; background: var(--accent-amber-light); border-top: 1px solid #F4C56A; border-bottom: 1px solid #F4C56A;">
+            <div style="padding: 8px 14px 4px; background: var(--accent-amber-light); border-top: 1px solid #f4c56a; border-bottom: 1px solid #f4c56a;">
               <span style="font-size: 11.5px; font-weight: 600; color: var(--accent-amber);">⚠️ Tvådosförfarande vid vikt &gt; 106 kg — 2 injektioner per dygn</span>
             </div>
 
@@ -342,37 +520,19 @@
                     <td>106–120</td>
                     <td><span class="dose">10 000 + 10 000 E</span></td>
                     <td><span class="dose">0,5 + 0,5 ml</span></td>
-                    <td>
-                      <div class="syringe-row">
-                        <span class="syringe-badge s-red">röd</span>
-                        <span style="color:var(--text-light); font-size:13px;">+</span>
-                        <span class="syringe-badge s-red">röd</span>
-                      </div>
-                    </td>
+                    <td><div class="syringe-row"><span class="syringe-badge s-red">röd</span><span style="color: var(--text-light); font-size: 13px;">+</span><span class="syringe-badge s-red">röd</span></div></td>
                   </tr>
                   <tr>
                     <td>121–134</td>
                     <td><span class="dose">10 000 + 12 000 E</span></td>
                     <td><span class="dose">0,5 + 0,6 ml</span></td>
-                    <td>
-                      <div class="syringe-row">
-                        <span class="syringe-badge s-red">röd</span>
-                        <span style="color:var(--text-light); font-size:13px;">+</span>
-                        <span class="syringe-badge s-brown">brun</span>
-                      </div>
-                    </td>
+                    <td><div class="syringe-row"><span class="syringe-badge s-red">röd</span><span style="color: var(--text-light); font-size: 13px;">+</span><span class="syringe-badge s-brown">brun</span></div></td>
                   </tr>
                   <tr>
                     <td>135–150</td>
                     <td><span class="dose">12 000 + 12 000 E</span></td>
                     <td><span class="dose">0,6 + 0,6 ml</span></td>
-                    <td>
-                      <div class="syringe-row">
-                        <span class="syringe-badge s-brown">brun</span>
-                        <span style="color:var(--text-light); font-size:13px;">+</span>
-                        <span class="syringe-badge s-brown">brun</span>
-                      </div>
-                    </td>
+                    <td><div class="syringe-row"><span class="syringe-badge s-brown">brun</span><span style="color: var(--text-light); font-size: 13px;">+</span><span class="syringe-badge s-brown">brun</span></div></td>
                   </tr>
                 </tbody>
               </table>
@@ -382,25 +542,24 @@
 
         <div class="source">
           <span class="source-icon">📎</span>
-          <div>Källa: Lasarettet i Ystad, Region Skåne — <em>Innohep® (tinzaparin) dosrekommendationer</em>, datum för översyn 2020-04-01</div>
+          <div>Källa: Lasarettet i Ystad, Region Skåne, <em>Innohep® (tinzaparin) dosrekommendationer</em>, datum för översyn 2020-04-01.</div>
         </div>
-
       </div>
-      <!-- /innohep -->
 
-
-      <!-- ═══════════════════════════
-           RAF DOSERINGSTABELL
-      ═══════════════════════════ -->
       <div class="page" id="page-raf-dosering">
-
         <div class="page-header">
           <div class="page-icon green">🦠</div>
           <div>
             <div class="page-title">RAF-doseringstabell</div>
-            <div class="page-desc">Normaldos (S) och högdos (I) för vuxna. Anpassa för njurfunktion, vikt och indikation.</div>
+            <div class="page-desc">Normaldos (S) och högdos (I) för vuxna. Tabellen ligger kvar i tabellformat, men ramen runt den är standardiserad för samma utseende som övriga referenser.</div>
           </div>
           <div class="page-badge">v7.0 · 2026-01-19</div>
+        </div>
+
+        <div class="reference-meta section">
+          <span class="meta-pill">Källa: RAF / SLS</span>
+          <span class="meta-pill">Typ: nationell doseringstabell</span>
+          <span class="meta-pill">Format: flersegmentstabell</span>
         </div>
 
         <div class="alert blue">
@@ -419,15 +578,15 @@
               <table>
                 <thead><tr><th>Preparat</th><th>Normaldos (S)</th><th>Högdos (I)</th><th>UVI-dos</th><th>Särskilda överväganden</th></tr></thead>
                 <tbody>
-                  <tr><td>Bensylpenicillin</td><td><span class="dose">1 g × 3 i.v.</span><div class="sub">alt. 1 g × 4 i.v.</div></td><td><span class="dose">3 g × 4 i.v.</span><div class="sub">alt. 1 g × 6 i.v.</div></td><td><span class="saknas">—</span></td><td class="special">Vid allvarliga pneumokockinfektioner (I): överväg 6-dos, särskilt unga njurfriska.<br><span class="warn">Corynebacterium spp.: endast högdos</span><br>Meningit: 3 g × 4 i.v. · Endokardit: 3 g × 4 alt. 2 g × 6 i.v.</td></tr>
-                  <tr><td>Ampicillin</td><td><span class="dose">2 g × 3 i.v.</span></td><td><span class="dose">2 g × 4 i.v.</span></td><td><span class="saknas">—</span></td><td class="special">Meningit: 3 g × 4 i.v. · Endokardit: 3 g × 4 alt. 2 g × 6 i.v.</td></tr>
+                  <tr><td>Bensylpenicillin</td><td><span class="dose">1 g × 3 i.v.</span><div class="sub">alt. 1 g × 4 i.v.</div></td><td><span class="dose">3 g × 4 i.v.</span><div class="sub">alt. 1 g × 6 i.v.</div></td><td><span class="saknas">-</span></td><td class="special">Vid allvarliga pneumokockinfektioner (I): överväg 6-dos, särskilt unga njurfriska.<br><span class="warn">Corynebacterium spp.: endast högdos</span><br>Meningit: 3 g × 4 i.v. · Endokardit: 3 g × 4 alt. 2 g × 6 i.v.</td></tr>
+                  <tr><td>Ampicillin</td><td><span class="dose">2 g × 3 i.v.</span></td><td><span class="dose">2 g × 4 i.v.</span></td><td><span class="saknas">-</span></td><td class="special">Meningit: 3 g × 4 i.v. · Endokardit: 3 g × 4 alt. 2 g × 6 i.v.</td></tr>
                   <tr><td>Amoxicillin p.o.</td><td><span class="dose">500 mg × 3 p.o.</span></td><td><span class="dose">750 mg × 3 p.o.</span></td><td><span class="dose">500 mg × 3 p.o.</span></td><td class="special"><span class="warn">H. influenzae: endast högdos</span><br>Svår inf.: 1 g × 4 p.o. · Osteit: 1,5 g × 3 p.o.</td></tr>
                   <tr><td>Amoxicillin-klavulansyra p.o.</td><td><span class="dose">500/125 mg × 3</span></td><td><span class="dose">875/125 mg × 3</span></td><td><span class="dose">500/125 mg × 3</span></td><td class="special"><span class="warn">H. influenzae: endast högdos</span></td></tr>
-                  <tr><td>PcV</td><td><span class="dose">1 g × 3 p.o.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Piperacillin-tazobaktam</td><td><span class="dose">4/0,5 g × 3 i.v.</span><div class="sub">UVI/buk/hud. Övriga inf./ESBL: × 4</div></td><td><span class="dose">4/0,5 g × 4 i.v.</span><div class="sub">Överväg förlängd infusion</div></td><td><span class="saknas">—</span></td><td class="special"><span class="warn">Pseudomonas spp.: endast högdos</span><br><span class="warn">Enterobacterales: endast högdos</span><br>Endokardit/allvarliga inf.: 3 g × 4 – 2 g × 6 i.v.</td></tr>
-                  <tr><td>Temocillin</td><td><span class="dose">2 g × 2 i.v.</span></td><td><span class="dose">2 g × 3 i.v.</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Kloxacillin</td><td><span class="dose">2 g × 3 i.v.</span><div class="sub">alt. 1 g × 4</div></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Flukloxacillin</td><td><span class="dose">1 g × 3 p.o.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
+                  <tr><td>PcV</td><td><span class="dose">1 g × 3 p.o.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Piperacillin-tazobaktam</td><td><span class="dose">4/0,5 g × 3 i.v.</span><div class="sub">UVI/buk/hud. Övriga inf./ESBL: × 4</div></td><td><span class="dose">4/0,5 g × 4 i.v.</span><div class="sub">Överväg förlängd infusion</div></td><td><span class="saknas">-</span></td><td class="special"><span class="warn">Pseudomonas spp.: endast högdos</span><br><span class="warn">Enterobacterales: endast högdos</span><br>Endokardit/allvarliga inf.: 3 g × 4 – 2 g × 6 i.v.</td></tr>
+                  <tr><td>Temocillin</td><td><span class="dose">2 g × 2 i.v.</span></td><td><span class="dose">2 g × 3 i.v.</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Kloxacillin</td><td><span class="dose">2 g × 3 i.v.</span><div class="sub">alt. 1 g × 4</div></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Flukloxacillin</td><td><span class="dose">1 g × 3 p.o.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
                   <tr><td>Mecillinam</td><td><span class="saknas">Saknas</span></td><td><span class="saknas">Saknas</span></td><td><span class="dose">200 mg × 3 p.o.</span></td><td></td></tr>
                 </tbody>
               </table>
@@ -444,16 +603,16 @@
                 <thead><tr><th>Preparat</th><th>Normaldos (S)</th><th>Högdos (I)</th><th>UVI-dos</th><th>Särskilda överväganden</th></tr></thead>
                 <tbody>
                   <tr><td>Cefadroxil</td><td><span class="dose">0,5–1 g × 2 p.o.</span></td><td><span class="saknas">Saknas</span></td><td><span class="dose">0,5–1 g × 2 p.o.</span></td><td></td></tr>
-                  <tr><td>Cefotaxim</td><td><span class="dose">1 g × 3 i.v.</span></td><td><span class="dose">2 g × 3 i.v.</span></td><td><span class="saknas">—</span></td><td class="special"><span class="warn">S. aureus: endast högdos</span><br>Meningit: 3 g × 4 i.v.</td></tr>
-                  <tr><td>Ceftazidim</td><td><span class="dose">1 g × 3 i.v.</span></td><td><span class="dose">2 g × 3 i.v.</span></td><td><span class="saknas">—</span></td><td class="special"><span class="warn">S. aureus: endast högdos</span><br><span class="warn">Pseudomonas spp.: endast högdos</span></td></tr>
-                  <tr><td>Ceftazidim-avibaktam</td><td><span class="dose">2/0,5 g × 3 i.v. (2 h)</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Ceftibuten</td><td><span class="dose">400 mg × 1 p.o.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Ceftolozan-tazobaktam (buk/UVI)</td><td><span class="dose">1/0,5 g × 3 i.v. (1 h)</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Ceftolozan-tazobaktam (pneumoni)</td><td><span class="dose">2/1 g × 3 i.v. (1 h)</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Ceftriaxon</td><td><span class="dose">2 g × 1 i.v.</span></td><td><span class="dose">2 g × 2 alt. 4 g × 1 i.v.</span></td><td><span class="saknas">—</span></td><td class="special">Meningit: 4 g × 1 i.v.</td></tr>
-                  <tr><td>Cefepim-enmetazobaktam (UVI)</td><td><span class="dose">2/0,5 g × 3 (2 h)</span></td><td><span class="saknas">—</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Cefepim-enmetazobaktam (pneumoni)</td><td><span class="dose">2/0,5 g × 3 (4 h)</span></td><td><span class="saknas">—</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Cefiderokol</td><td><span class="dose">2 g × 3 i.v. (3 h)</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
+                  <tr><td>Cefotaxim</td><td><span class="dose">1 g × 3 i.v.</span></td><td><span class="dose">2 g × 3 i.v.</span></td><td><span class="saknas">-</span></td><td class="special"><span class="warn">S. aureus: endast högdos</span><br>Meningit: 3 g × 4 i.v.</td></tr>
+                  <tr><td>Ceftazidim</td><td><span class="dose">1 g × 3 i.v.</span></td><td><span class="dose">2 g × 3 i.v.</span></td><td><span class="saknas">-</span></td><td class="special"><span class="warn">S. aureus: endast högdos</span><br><span class="warn">Pseudomonas spp.: endast högdos</span></td></tr>
+                  <tr><td>Ceftazidim-avibaktam</td><td><span class="dose">2/0,5 g × 3 i.v. (2 h)</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Ceftibuten</td><td><span class="dose">400 mg × 1 p.o.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Ceftolozan-tazobaktam (buk/UVI)</td><td><span class="dose">1/0,5 g × 3 i.v. (1 h)</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Ceftolozan-tazobaktam (pneumoni)</td><td><span class="dose">2/1 g × 3 i.v. (1 h)</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Ceftriaxon</td><td><span class="dose">2 g × 1 i.v.</span></td><td><span class="dose">2 g × 2 alt. 4 g × 1 i.v.</span></td><td><span class="saknas">-</span></td><td class="special">Meningit: 4 g × 1 i.v.</td></tr>
+                  <tr><td>Cefepim-enmetazobaktam (UVI)</td><td><span class="dose">2/0,5 g × 3 (2 h)</span></td><td><span class="saknas">-</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Cefepim-enmetazobaktam (pneumoni)</td><td><span class="dose">2/0,5 g × 3 (4 h)</span></td><td><span class="saknas">-</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Cefiderokol</td><td><span class="dose">2 g × 3 i.v. (3 h)</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
                 </tbody>
               </table>
             </div>
@@ -472,9 +631,9 @@
                   <tr><td>Imipenem</td><td><span class="dose">0,5 g × 4 i.v.</span></td><td><span class="dose">1 g × 4 i.v.</span></td><td class="special"><span class="warn">Pseudomonas, Enterococcus, Morganella, Proteus, Providencia spp.: endast högdos</span></td></tr>
                   <tr><td>Imipenem-relebaktam</td><td><span class="dose">0,5/0,25 g × 4</span></td><td><span class="saknas">Saknas</span></td><td></td></tr>
                   <tr><td>Meropenem</td><td><span class="dose">1 g × 3 i.v.</span></td><td><span class="dose">2 g × 3 i.v. (3 h)</span></td><td class="special"><span class="warn">Pseudomonas spp.: endast högdos</span><br>Meningit: 2 g × 3</td></tr>
-                  <tr><td>Meropenem-vaborbaktam</td><td><span class="dose">2/2 g × 3 i.v. (3 h)</span></td><td><span class="saknas">—</span></td><td></td></tr>
+                  <tr><td>Meropenem-vaborbaktam</td><td><span class="dose">2/2 g × 3 i.v. (3 h)</span></td><td><span class="saknas">-</span></td><td></td></tr>
                   <tr><td>Aztreonam</td><td><span class="dose">1 g × 3 i.v.</span></td><td><span class="dose">2 g × 4 i.v.</span></td><td class="special"><span class="warn">Pseudomonas spp.: endast högdos</span></td></tr>
-                  <tr><td>Aztreonam-avibaktam</td><td><span class="dose">Laddning: 2/0,67 g i.v. (3 h)<br>Underhåll: 1,5/0,5 g × 4 i.v. (3 h)</span></td><td><span class="saknas">—</span></td><td></td></tr>
+                  <tr><td>Aztreonam-avibaktam</td><td><span class="dose">Laddning: 2/0,67 g i.v. (3 h)<br>Underhåll: 1,5/0,5 g × 4 i.v. (3 h)</span></td><td><span class="saknas">-</span></td><td></td></tr>
                 </tbody>
               </table>
             </div>
@@ -509,23 +668,23 @@
               <table>
                 <thead><tr><th>Preparat</th><th>Normaldos (S)</th><th>Högdos (I)</th><th>UVI-dos</th><th>Särskilda överväganden</th></tr></thead>
                 <tbody>
-                  <tr><td>Teikoplanin</td><td><span class="dose">400 mg × 1 i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Vankomycin</td><td><span class="dose">1 g × 2–3 i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td class="special">Terapeutisk monitorering ska vägleda doseringen.</td></tr>
-                  <tr><td>Azitromycin</td><td><span class="dose">500 mg × 1 p.o./i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Erytromycin</td><td><span class="dose">500 mg × 2–4 p.o./i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Klindamycin</td><td><span class="dose">300 mg × 3 p.o.</span><div class="sub">alt. 600 mg × 3 i.v.</div></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td class="special">Vid allvarlig inf.: 300 mg × 4 p.o. alt. 900 mg × 3 i.v.</td></tr>
-                  <tr><td>Doxycyklin</td><td><span class="dose">100 mg × 1 p.o.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td class="special">Vid allvarlig inf.: 200 mg × 1 p.o.</td></tr>
-                  <tr><td>Tigecyklin</td><td><span class="dose">100 mg laddning, sedan 50 mg × 2 i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Linezolid</td><td><span class="dose">600 mg × 2 p.o./i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td class="special">Meningit: 600 mg × 2 i.v.</td></tr>
-                  <tr><td>Kolistin</td><td><span class="dose">Laddning: 9 milj. IE i.v.<br>Underhåll: 3 milj. IE × 3 alt. 4,5 milj. IE × 2</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td class="special"><span class="warn">Ges alltid i kombination med annat aktivt preparat.</span></td></tr>
-                  <tr><td>Daptomycin</td><td><span class="dose">4–6 mg/kg × 1 i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td class="special">Enterokockorsakad bakteremi/endokardit: högre doser, se EUCAST guidance.</td></tr>
-                  <tr><td>Fosfomycin i.v.</td><td><span class="dose">16–18 g/dag på 3–4 doser</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td class="special">Vid allvarlig inf.: 8 g × 3 i.v.</td></tr>
+                  <tr><td>Teikoplanin</td><td><span class="dose">400 mg × 1 i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Vankomycin</td><td><span class="dose">1 g × 2–3 i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td class="special">Terapeutisk monitorering ska vägleda doseringen.</td></tr>
+                  <tr><td>Azitromycin</td><td><span class="dose">500 mg × 1 p.o./i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Erytromycin</td><td><span class="dose">500 mg × 2–4 p.o./i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Klindamycin</td><td><span class="dose">300 mg × 3 p.o.</span><div class="sub">alt. 600 mg × 3 i.v.</div></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td class="special">Vid allvarlig inf.: 300 mg × 4 p.o. alt. 900 mg × 3 i.v.</td></tr>
+                  <tr><td>Doxycyklin</td><td><span class="dose">100 mg × 1 p.o.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td class="special">Vid allvarlig inf.: 200 mg × 1 p.o.</td></tr>
+                  <tr><td>Tigecyklin</td><td><span class="dose">100 mg laddning, sedan 50 mg × 2 i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Linezolid</td><td><span class="dose">600 mg × 2 p.o./i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td class="special">Meningit: 600 mg × 2 i.v.</td></tr>
+                  <tr><td>Kolistin</td><td><span class="dose">Laddning: 9 milj. IE i.v.<br>Underhåll: 3 milj. IE × 3 alt. 4,5 milj. IE × 2</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td class="special"><span class="warn">Ges alltid i kombination med annat aktivt preparat.</span></td></tr>
+                  <tr><td>Daptomycin</td><td><span class="dose">4–6 mg/kg × 1 i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td class="special">Enterokockorsakad bakteremi/endokardit: högre doser, se EUCAST guidance.</td></tr>
+                  <tr><td>Fosfomycin i.v.</td><td><span class="dose">16–18 g/dag på 3–4 doser</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td class="special">Vid allvarlig inf.: 8 g × 3 i.v.</td></tr>
                   <tr><td>Fosfomycin p.o.</td><td><span class="saknas">Saknas</span></td><td><span class="saknas">Saknas</span></td><td><span class="dose">3 g engångsdos p.o.</span></td><td></td></tr>
-                  <tr><td>Fusidinsyra</td><td><span class="dose">500 mg × 2 p.o./i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td class="special">Vid allvarlig inf.: 500 mg × 3 p.o./i.v.</td></tr>
-                  <tr><td>Lefamulin</td><td><span class="dose">150 mg × 2 i.v.</span><div class="sub">alt. 600 mg × 2 p.o.</div></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
-                  <tr><td>Metronidazol</td><td><span class="dose">400–500 mg × 3 p.o./i.v.</span><div class="sub">alt. laddning 1,5 g × 1, sedan 1 g × 1 i.v.</div></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
+                  <tr><td>Fusidinsyra</td><td><span class="dose">500 mg × 2 p.o./i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td class="special">Vid allvarlig inf.: 500 mg × 3 p.o./i.v.</td></tr>
+                  <tr><td>Lefamulin</td><td><span class="dose">150 mg × 2 i.v.</span><div class="sub">alt. 600 mg × 2 p.o.</div></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
+                  <tr><td>Metronidazol</td><td><span class="dose">400-500 mg × 3 p.o./i.v.</span><div class="sub">alt. laddning 1,5 g × 1, sedan 1 g × 1 i.v.</div></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
                   <tr><td>Nitrofurantoin</td><td><span class="saknas">Saknas</span></td><td><span class="saknas">Saknas</span></td><td><span class="dose">50 mg × 3 p.o.</span></td><td></td></tr>
-                  <tr><td>Rifampicin</td><td><span class="dose">600 mg × 1 p.o./i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">—</span></td><td></td></tr>
+                  <tr><td>Rifampicin</td><td><span class="dose">600 mg × 1 p.o./i.v.</span></td><td><span class="saknas">Saknas</span></td><td><span class="saknas">-</span></td><td></td></tr>
                   <tr><td>Trimetoprim</td><td><span class="saknas">Saknas</span></td><td><span class="saknas">Saknas</span></td><td><span class="dose">160 mg × 2 p.o.</span></td><td></td></tr>
                   <tr><td>Trimetoprim-sulfametoxazol</td><td><span class="dose">160/800 mg × 2 p.o./i.v.</span></td><td><span class="dose">240/1200 mg × 2 p.o./i.v.</span></td><td><span class="dose">160/800 mg × 2 p.o./i.v.</span></td><td class="special"><span class="warn">Stenotrophomonas maltophilia: endast högdos</span><br>Meningit: 5 mg/kg TMP + 25 mg/kg sulfa × 3 i.v.</td></tr>
                 </tbody>
@@ -536,16 +695,13 @@
 
         <div class="source">
           <span class="source-icon">📎</span>
-          <div>Källa: <a href="https://forening.sls.se/media/1jfjfq4y/raf-doseringstabell-70.pdf" target="_blank">RAF Doseringstabell version 7.0</a>, Svenska Läkaresällskapet / NordicAST/EUCAST v16.0 — publicerad 2026-01-19</div>
+          <div>Källa: <a href="https://forening.sls.se/media/1jfjfq4y/raf-doseringstabell-70.pdf" target="_blank" rel="noreferrer">RAF Doseringstabell version 7.0</a>, Svenska Läkaresällskapet / NordicAST/EUCAST v16.0, publicerad 2026-01-19.</div>
         </div>
-
       </div>
-      <!-- /raf-dosering -->
 
     </div>
   </main>
 
-  <!-- BOTTOM NAV (mobil) -->
   <nav class="bottom-nav">
     <button class="bn-item active" onclick="showPage('home')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5L12 3l9 8.5V21a1 1 0 01-1 1H4a1 1 0 01-1-1v-9.5z"/></svg>
@@ -559,22 +715,34 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M8 8l4-4 4 4" stroke-linecap="round"/><rect x="9" y="12" width="6" height="8" rx="1"/></svg>
       <span class="bn-label">Innohep</span>
     </button>
-    <!-- LÄGG TILL FLER KNAPPAR HÄR -->
   </nav>
-
 </div>
 
 <script>
   function showPage(id) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-item, .bn-item').forEach(n => n.classList.remove('active'));
-    const page = document.getElementById('page-' + id);
-    if (page) page.classList.add('active');
-    document.querySelectorAll('.nav-item, .bn-item').forEach(item => {
-      const oc = item.getAttribute('onclick') || '';
-      if (oc.includes("'" + id + "'")) item.classList.add('active');
+    document.querySelectorAll(".page").forEach(function(page) {
+      page.classList.remove("active");
     });
-    document.querySelector('.main').scrollTo(0, 0);
+    document.querySelectorAll(".nav-item, .bn-item").forEach(function(item) {
+      item.classList.remove("active");
+    });
+
+    var page = document.getElementById("page-" + id);
+    if (page) {
+      page.classList.add("active");
+    }
+
+    document.querySelectorAll(".nav-item, .bn-item").forEach(function(item) {
+      var onclickValue = item.getAttribute("onclick") || "";
+      if (onclickValue.indexOf("'" + id + "'") !== -1) {
+        item.classList.add("active");
+      }
+    });
+
+    var main = document.querySelector(".main");
+    if (main) {
+      main.scrollTo(0, 0);
+    }
   }
 </script>
 </body>
