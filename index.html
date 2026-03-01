@@ -417,6 +417,10 @@
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v14M6 7l4-4 4 4" stroke-linecap="round" stroke-linejoin="round"/><rect x="7" y="10" width="6" height="7" rx="1"/></svg>
       <span>Doseringstabeller</span>
     </div>
+    <div class="nav-item" onclick="showPage('internmedicin')">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v14M3 10h14"/></svg>
+      <span>Internmedicin</span>
+    </div>
     <div class="sidebar-footer">
       <strong>MedKortet 1.1</strong>
       Kontrollera alltid mot originalkälla och lokala PM.
@@ -441,6 +445,10 @@
             <div class="home-card" onclick="showPage('koagulation')">
               <div class="home-card-icon">🩸</div>
               <div class="home-card-title">Doseringstabeller</div>
+            </div>
+            <div class="home-card" onclick="showPage('internmedicin')">
+              <div class="home-card-icon">🩺</div>
+              <div class="home-card-title">Internmedicin</div>
             </div>
           </div>
         </div>
@@ -467,6 +475,10 @@
             <div class="home-card" onclick="showPage('koagulation')">
               <div class="home-card-icon">🩸</div>
               <div class="home-card-title">Doseringstabeller</div>
+            </div>
+            <div class="home-card" onclick="showPage('internmedicin')">
+              <div class="home-card-icon">🩺</div>
+              <div class="home-card-title">Internmedicin</div>
             </div>
           </div>
         </div>
@@ -563,6 +575,25 @@
             <div class="home-card" onclick="showPage('opioiddosering')">
               <div class="home-card-icon">💊</div>
               <div class="home-card-title">Opioiddosering</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="page-internmedicin">
+        <div class="page-header">
+          <div class="page-icon green">🩺</div>
+          <div>
+            <div class="page-title">Internmedicin</div>
+            <div class="page-desc">PM och beslutsstöd för internmedicinska tillstånd.</div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-title">Kort</div>
+          <div class="home-grid">
+            <div class="home-card" onclick="showPage('hypokalemi')">
+              <div class="home-card-icon">⚡</div>
+              <div class="home-card-title">Hypokalemi</div>
             </div>
           </div>
         </div>
@@ -670,6 +701,126 @@
         <div class="source">
           <span class="source-icon">📎</span>
           <div>Källa: Din inklistrade källa: <em>Konverteringsguide opioider</em>. Källor angivna i underlaget: Konverteringsguide för opioider 2015 Region Jönköpings län, modifierad information från Läkemedelsverket 3:2017 samt klinisk erfarenhet.</div>
+        </div>
+      </div>
+
+      <div class="page" id="page-hypokalemi">
+        <div class="page-header">
+          <div class="page-icon green">⚡</div>
+          <div>
+            <div class="page-title">Hypokalemi</div>
+            <div class="page-desc">Diagnostik och behandling.</div>
+          </div>
+          <div class="page-badge">PM</div>
+        </div>
+
+        <div class="alert amber">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-text">
+            <strong>Grundprincip</strong>
+            Intravenös tillförsel om K &lt;3,0 eller vid symtom. I övriga fall räcker ofta enteral substitution när detta är möjligt.
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Bakgrund</div>
+          <div class="card">
+            <div class="card-header">
+              <span>📘</span>
+              <div class="card-header-title">Viktiga punkter</div>
+            </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="prose">
+                  <p>Hypokalemi orsakas vanligen av gastrointestinala och/eller renala förluster men kan också orsakas av intracellulär redistribution.</p>
+                  <p>Total deficit kan uppskattas till cirka 200-400 mmol per 1 mmol/l K om hypokalemin orsakats av förluster.</p>
+                  <p>Hypomagnesemi kan förekomma samtidigt och ge terapirefraktär hypokalemi.</p>
+                  <p>Symtom uppkommer i regel först vid K &lt;3,0 mmol/l. Signifikant muskelpåverkan kan ske om K &lt;2,5 mmol/l.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Övervakning</div>
+          <div class="card">
+            <div class="card-header">
+              <span>📈</span>
+              <div class="card-header-title">Telemetri och provtagning</div>
+            </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="prose">
+                  <p>Telemetri rekommenderas om K &lt;2,5 mmol/l eller &lt;3,0 mmol/l om EKG-förändringar föreligger.</p>
+                  <p>Telemetri rekommenderas också om tillförd mängd kalium är &gt;10 mmol/h.</p>
+                  <p>Provtagning minst var 4:e timme fram till kalium stabilt &gt;3,0 mmol/l och symtom/EKG-förändringar gått i regress.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Enteral behandling</div>
+          <div class="card">
+            <div class="card-header">
+              <span>💊</span>
+              <div class="card-header-title">Per os</div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Preparat</th><th>Innehåll</th><th>Dosering</th></tr></thead>
+                <tbody>
+                  <tr><td>Kaleorid 750 mg</td><td><span class="dose">10 mmol kalium</span></td><td><span class="dose">1-2 x 2-3</span></td></tr>
+                  <tr><td>Kajos mixtur 15 ml</td><td><span class="dose">13 mmol kalium</span></td><td><span class="dose">15-30 ml x 1-2</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="prose">
+                  <p>750 mg Kaleorid höjer S-Kalium övergående med cirka 0,25-0,5 mmol/l.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Intravenös behandling</div>
+          <div class="card">
+            <div class="card-header">
+              <span>💉</span>
+              <div class="card-header-title">Perifer och central tillförsel</div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Typ</th><th>Praktik</th></tr></thead>
+                <tbody>
+                  <tr><td>Perifer tillförsel</td><td>Tillförseln bör inte överskrida <span class="dose">10 mmol/h</span>.</td></tr>
+                  <tr><td>Central tillförsel</td><td>Infusionstakt i regel <span class="dose">≤20 mmol/h</span>. Vid livshotande tillstånd kan i undantagsfall <span class="dose">40 mmol/h</span> tillföras.</td></tr>
+                  <tr><td>CVK</td><td>Bör övervägas vid allvarlig hypokalemi: <span class="dose">K &lt;2,5</span> eller <span class="dose">K &lt;3,0 med symtom</span>.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="content-block-title">Beredning och praktiskt</div>
+                <div class="prose">
+                  <p>Infusionspump ska användas om beredningens kaliumkoncentration överstiger 40 mmol/l.</p>
+                  <p>Perifer beredning: max 30 ml i 1000 ml RAc/NaCl ger 60 mmol K/l, max 15 ml i 500 ml RAc/NaCl ger 60 mmol K/l, max 10 ml i 250 ml RAc/NaCl ger 80 mmol K/l.</p>
+                  <p>Central beredning: Kaliumklorid 2 mmol/ml 20 ml i 20 ml NaCl ger 1 mmol/ml.</p>
+                  <p>Undvik glukosinnehållande vätskor då detta kan sänka kalium ytterligare.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="source">
+          <span class="source-icon">📎</span>
+          <div>Källa: <a href="https://mellanarkiv-offentlig.vgregion.se/alfresco/s/archive/stream/public/v1/source/available/SOFIA/SU9805-1593997-1117/SURROGATE/Hypokalemi%2C%20diagnostik%20och%20behandling.pdf" target="_blank" rel="noreferrer">Medicin - Hypokalemi, diagnostik och behandling (PDF)</a>, Dokument-ID SU9805-1593997-1117, Version 3.0, giltig från 2025-11-10 till 2026-03-10.</div>
         </div>
       </div>
 
