@@ -417,10 +417,6 @@
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v14M6 7l4-4 4 4" stroke-linecap="round" stroke-linejoin="round"/><rect x="7" y="10" width="6" height="7" rx="1"/></svg>
       <span>Koagulation</span>
     </div>
-    <div class="nav-item" onclick="showPage('anamnes-checklistor')">
-      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h10a1 1 0 011 1v11l-2.5-1.8L11 16l-2.5-1.8L6 16V5a1 1 0 011-1z"/><path d="M8 8h4M8 11h4"/></svg>
-      <span>Anamnes-checklistor</span>
-    </div>
     <div class="sidebar-footer">
       <strong>MedKortet 1.1</strong>
       Kontrollera alltid mot originalkälla och lokala PM.
@@ -445,10 +441,6 @@
             <div class="home-card" onclick="showPage('koagulation')">
               <div class="home-card-icon">🩸</div>
               <div class="home-card-title">Koagulation</div>
-            </div>
-            <div class="home-card" onclick="showPage('anamnes-checklistor')">
-              <div class="home-card-icon">📝</div>
-              <div class="home-card-title">Anamnes-checklistor</div>
             </div>
           </div>
         </div>
@@ -476,10 +468,6 @@
               <div class="home-card-icon">🩸</div>
               <div class="home-card-title">Koagulation</div>
             </div>
-            <div class="home-card" onclick="showPage('anamnes-checklistor')">
-              <div class="home-card-icon">📝</div>
-              <div class="home-card-title">Anamnes-checklistor</div>
-            </div>
           </div>
         </div>
       </div>
@@ -493,15 +481,43 @@
           </div>
         </div>
         <div class="section">
-          <div class="section-title">Kort</div>
+          <div class="section-title">Underkategorier</div>
+          <div class="home-grid">
+            <div class="home-card" onclick="showPage('anamnes-checklistor')">
+              <div class="home-card-icon">📝</div>
+              <div class="home-card-title">Anamnes-checklistor</div>
+            </div>
+            <div class="home-card" onclick="showPage('beslutsstod')">
+              <div class="home-card-icon">🫀</div>
+              <div class="home-card-title">Beslutsstöd</div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-title">Övriga kort</div>
           <div class="home-grid">
             <div class="home-card" onclick="showPage('dvt-le-score')">
               <div class="home-card-icon">🫁</div>
               <div class="home-card-title">DVT/LE score</div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="page-beslutsstod">
+        <div class="page-header">
+          <div class="page-icon amber">🫀</div>
+          <div>
+            <div class="page-title">Beslutsstöd</div>
+            <div class="page-desc">Snabba beslutsstöd i akutsammanhang.</div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-title">Kort</div>
+          <div class="home-grid">
             <div class="home-card" onclick="showPage('syncope-esc-2018')">
               <div class="home-card-icon">🫀</div>
-              <div class="home-card-title">Syncope ESC 2018</div>
+              <div class="home-card-title">ESC 2018 Syncope</div>
             </div>
           </div>
         </div>
@@ -1154,7 +1170,7 @@
         <div class="page-header">
           <div class="page-icon amber">🫀</div>
           <div>
-            <div class="page-title">Syncope ESC 2018</div>
+            <div class="page-title">ESC 2018 Syncope</div>
             <div class="page-desc">Risk features in suspected syncope.</div>
           </div>
           <div class="page-badge">ESC 2018</div>
@@ -1336,6 +1352,14 @@
               <span>🦵</span>
               <div class="card-header-title">Wells Criteria for DVT</div>
             </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="content-block-title">Syfte</div>
+                <div class="prose">
+                  <p>Skattar sannolikheten för DVT.</p>
+                </div>
+              </div>
+            </div>
             <div class="table-wrap">
               <table>
                 <thead><tr><th>Kriterium</th><th>Poäng</th></tr></thead>
@@ -1372,6 +1396,14 @@
               <span>🫁</span>
               <div class="card-header-title">Wells Criteria for Pulmonary Embolism</div>
             </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="content-block-title">Syfte</div>
+                <div class="prose">
+                  <p>Skattar sannolikheten för lungemboli.</p>
+                </div>
+              </div>
+            </div>
             <div class="table-wrap">
               <table>
                 <thead><tr><th>Kriterium</th><th>Poäng</th></tr></thead>
@@ -1407,6 +1439,12 @@
             </div>
             <div class="card-body">
               <div class="content-block">
+                <div class="content-block-title">Syfte</div>
+                <div class="prose">
+                  <p>Används för att utesluta LE hos lågriskpatienter när alla kriterier är negativa.</p>
+                </div>
+              </div>
+              <div class="content-block">
                 <div class="content-block-title">Alla måste vara negativa</div>
                 <div class="prose">
                   <ul>
@@ -1431,6 +1469,14 @@
             <div class="card-header">
               <span>📊</span>
               <div class="card-header-title">Pulmonary Embolism Severity Index (PESI)</div>
+            </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="content-block-title">Syfte</div>
+                <div class="prose">
+                  <p>Riskstratifierar bekräftad lungemboli.</p>
+                </div>
+              </div>
             </div>
             <div class="table-wrap">
               <table>
