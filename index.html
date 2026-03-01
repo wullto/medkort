@@ -495,6 +495,10 @@
         <div class="section">
           <div class="section-title">Kort</div>
           <div class="home-grid">
+            <div class="home-card" onclick="showPage('dvt-le-score')">
+              <div class="home-card-icon">🫁</div>
+              <div class="home-card-title">DVT/LE score</div>
+            </div>
             <div class="home-card" onclick="showPage('syncope-esc-2018')">
               <div class="home-card-icon">🫀</div>
               <div class="home-card-title">Syncope ESC 2018</div>
@@ -1312,6 +1316,164 @@
         <div class="source">
           <span class="source-icon">📎</span>
           <div>Källa: ESC 2018. Innehållet är infört enligt din inklistrade sammanställning från ESC 2018 syncope guidelines.</div>
+        </div>
+      </div>
+
+      <div class="page" id="page-dvt-le-score">
+        <div class="page-header">
+          <div class="page-icon red">🫁</div>
+          <div>
+            <div class="page-title">DVT/LE score</div>
+            <div class="page-desc">Snabböversikt av Wells DVT, Wells PE, PESI och PERC.</div>
+          </div>
+          <div class="page-badge">Akuten</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Wells DVT</div>
+          <div class="card">
+            <div class="card-header">
+              <span>🦵</span>
+              <div class="card-header-title">Wells Criteria for DVT</div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Kriterium</th><th>Poäng</th></tr></thead>
+                <tbody>
+                  <tr><td>Aktiv cancer</td><td><span class="dose">+1</span></td></tr>
+                  <tr><td>Paralys, pares eller nyligen gipsimmobilisering av nedre extremitet</td><td><span class="dose">+1</span></td></tr>
+                  <tr><td>Sängläge &gt;3 dagar eller större kirurgi senaste 12 veckorna med generell/regional anestesi</td><td><span class="dose">+1</span></td></tr>
+                  <tr><td>Lokal ömhet längs djupa vensystemet</td><td><span class="dose">+1</span></td></tr>
+                  <tr><td>Hela benet svullet</td><td><span class="dose">+1</span></td></tr>
+                  <tr><td>Vadomfång &gt;3 cm större än asymtomatiska benet</td><td><span class="dose">+1</span></td></tr>
+                  <tr><td>Pittingödem enbart i symtomatiska benet</td><td><span class="dose">+1</span></td></tr>
+                  <tr><td>Ytliga kollateralvener (icke-varikösa)</td><td><span class="dose">+1</span></td></tr>
+                  <tr><td>Tidigare DVT</td><td><span class="dose">+1</span></td></tr>
+                  <tr><td>Alternativ diagnos minst lika sannolik som DVT</td><td><span class="dose">−2</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="content-block-title">Cutoff</div>
+                <div class="prose">
+                  <p><strong>DVT unlikely:</strong> &lt;2</p>
+                  <p><strong>DVT likely:</strong> ≥2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Wells PE</div>
+          <div class="card">
+            <div class="card-header">
+              <span>🫁</span>
+              <div class="card-header-title">Wells Criteria for Pulmonary Embolism</div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Kriterium</th><th>Poäng</th></tr></thead>
+                <tbody>
+                  <tr><td>Kliniska tecken på DVT</td><td><span class="dose">+3</span></td></tr>
+                  <tr><td>PE mer sannolik än alternativ diagnos</td><td><span class="dose">+3</span></td></tr>
+                  <tr><td>HF &gt;100/min</td><td><span class="dose">+1.5</span></td></tr>
+                  <tr><td>Immobilisering ≥3 dagar eller kirurgi senaste 4 veckorna</td><td><span class="dose">+1.5</span></td></tr>
+                  <tr><td>Tidigare DVT eller PE</td><td><span class="dose">+1.5</span></td></tr>
+                  <tr><td>Hemoptys</td><td><span class="dose">+1</span></td></tr>
+                  <tr><td>Malignitet (pågående behandling, behandlad senaste 6 mån eller palliativ)</td><td><span class="dose">+1</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="content-block-title">Cutoff</div>
+                <div class="prose">
+                  <p><strong>PE unlikely:</strong> ≤4</p>
+                  <p><strong>PE likely:</strong> &gt;4</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">PERC</div>
+          <div class="card">
+            <div class="card-header">
+              <span>✅</span>
+              <div class="card-header-title">PERC Rule for Pulmonary Embolism</div>
+            </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="content-block-title">Alla måste vara negativa</div>
+                <div class="prose">
+                  <ul>
+                    <li>Ålder &lt;50 år</li>
+                    <li>Puls &lt;100/min</li>
+                    <li>SaO2 ≥95%</li>
+                    <li>Ingen unilateral bensvullnad</li>
+                    <li>Ingen hemoptys</li>
+                    <li>Ingen nylig kirurgi eller trauma som krävt sjukhusvård senaste 4 veckorna</li>
+                    <li>Ingen tidigare DVT eller PE</li>
+                    <li>Ingen östrogenanvändning</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">PESI</div>
+          <div class="card">
+            <div class="card-header">
+              <span>📊</span>
+              <div class="card-header-title">Pulmonary Embolism Severity Index (PESI)</div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Variabel</th><th>Poäng</th></tr></thead>
+                <tbody>
+                  <tr><td>Ålder</td><td><span class="dose">ålder i år</span></td></tr>
+                  <tr><td>Manligt kön</td><td><span class="dose">+10</span></td></tr>
+                  <tr><td>Cancer</td><td><span class="dose">+30</span></td></tr>
+                  <tr><td>Hjärtsvikt</td><td><span class="dose">+10</span></td></tr>
+                  <tr><td>Kronisk lungsjukdom</td><td><span class="dose">+10</span></td></tr>
+                  <tr><td>Puls ≥110/min</td><td><span class="dose">+20</span></td></tr>
+                  <tr><td>SBT &lt;100 mmHg</td><td><span class="dose">+30</span></td></tr>
+                  <tr><td>AF ≥30/min</td><td><span class="dose">+20</span></td></tr>
+                  <tr><td>Temp &lt;36°C</td><td><span class="dose">+20</span></td></tr>
+                  <tr><td>Påverkad mental status</td><td><span class="dose">+60</span></td></tr>
+                  <tr><td>SaO2 &lt;90%</td><td><span class="dose">+20</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-body">
+              <div class="content-block">
+                <div class="content-block-title">Riskklass</div>
+                <div class="prose">
+                  <p><strong>Klass I:</strong> ≤65</p>
+                  <p><strong>Klass II:</strong> 66–85</p>
+                  <p><strong>Klass III:</strong> 86–105</p>
+                  <p><strong>Klass IV:</strong> 106–125</p>
+                  <p><strong>Klass V:</strong> &gt;125</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="source">
+          <span class="source-icon">📎</span>
+          <div>
+            Referenser:
+            <a href="https://www.mdcalc.com/calc/362/wells-criteria-dvt" target="_blank" rel="noreferrer">Wells DVT</a>,
+            <a href="https://www.mdcalc.com/calc/115/wells-criteria-pulmonary-embolism" target="_blank" rel="noreferrer">Wells PE</a>,
+            <a href="https://www.mdcalc.com/calc/1304/pulmonary-embolism-severity-index-pesi" target="_blank" rel="noreferrer">PESI</a>,
+            <a href="https://www.mdcalc.com/calc/347/perc-rule-pulmonary-embolism" target="_blank" rel="noreferrer">PERC</a>.
+          </div>
         </div>
       </div>
 
